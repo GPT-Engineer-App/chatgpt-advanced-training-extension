@@ -1,0 +1,27 @@
+function createDiv() {
+  const overlayDiv = document.createElement("div");
+  overlayDiv.style.position = "fixed";
+  overlayDiv.style.top = "10px";
+  overlayDiv.style.right = "10px";
+  overlayDiv.style.backgroundColor = "white";
+  overlayDiv.style.border = "1px solid black";
+  overlayDiv.style.padding = "10px";
+  overlayDiv.style.zIndex = "1000";
+
+  const heading = document.createElement("h1");
+  heading.textContent = "Welcome to our ChatGPT Advanced Training";
+  overlayDiv.appendChild(heading);
+
+  const closeButton = document.createElement("button");
+  closeButton.textContent = "Close";
+  closeButton.onclick = function () {
+    overlayDiv.style.display = "none";
+  };
+  overlayDiv.appendChild(closeButton);
+
+  document.body.appendChild(overlayDiv);
+}
+
+if (window.location.hostname === "www.obviousworks.ch") {
+  createDiv();
+}
